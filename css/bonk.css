@@ -1,0 +1,10 @@
+.bonk-block{
+    background-color: #ddd;
+    border: 1px solid white;
+    box-sizing: border-box;
+    float:left;
+}
+
+.bonk-line{
+    stroke: black;
+}
