@@ -73,6 +73,9 @@ jk.bonk.prototype.draw = function(){
     var box_width = jk.screen().width / this.width;
     var box_height = jk.screen().height / this.height;
 
+    d3.select("body")
+	.style("background-color","black")
+    
     for (i = 0 ; i < this.width * this.height; i++){
 	var col = i % this.width;
 	var row = Math.floor(i / this.width);
@@ -84,6 +87,8 @@ jk.bonk.prototype.draw = function(){
 	    .classed("bonk-line", true)
 	    .attr("data-row", row)
 	    .attr("data-col", col)
+	    .attr("rx",box_width / 10)
+	    .attr("ry",box_width / 10)
 	    .attr("x", col * box_width)
 	    .attr("y", row * box_height)
 	    .attr("width", box_width)
@@ -96,7 +101,9 @@ jk.bonk.prototype.draw = function(){
 		d3.select(this)
 		    .transition()
 		    .duration(250)
-		    .style("fill", "green");
+		// .style("fill", "green");
+		    .style("fill", that.random_color());
+		
 	    })
 	    .on("mouseout", function(){
 		// that.off(d3.select(this)
@@ -117,5 +124,23 @@ jk.bonk.prototype.draw = function(){
     
 }
 
-b = new jk.bonk(80, 100);
+jk.bonk.prototype.random_color = function(){
+    var colors = ["red","blue","green","yellow","white","orange"];
+    var ind =  Math.floor(Math.random() * colors.length);
+    return colors[ind];
+}
 
+b = new jk.bonk(40, 40);
+// b.lights_demo();
+
+// SNAKE
+
+jk.snake = function(){
+
+    d3.select(window).on("keydown", function(e){
+	console.log(this);
+    });
+    
+}
+
+jk.snake();
