@@ -1,17 +1,20 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bonk.css">
-  </head>
-  <body>
-    <h1>Jake Kara</h1>
-    <li>jake@jakekara.com</li>
-    <li>twitter.com/jakekara</li>
-    <li>trendct.org</li>
-    <li>jakekara.github.io</li>
-    <script src="js/bonk.js"></script>
-  </body>
-</html>
-
+---
+layout: base
+---
+{% include base.html %}
+<div class="home">
+  <!-- <h1 class="page-heading">JakeKara.com</h1> -->
+  <div class="post-list">
+    {% for post in site.posts %}
+      <div class="col-xs-12 story-preview">
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+	    {{ post.title | escape }}
+	  </a>
+        </h2>	
+        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
+	<div class="post-excerpt">{{post.excerpt}}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

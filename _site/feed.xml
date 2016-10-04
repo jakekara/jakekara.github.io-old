@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jakekara.github.io</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://example.com/</link>
+    <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 03 Oct 2016 21:03:40 -0400</pubDate>
+    <lastBuildDate>Mon, 03 Oct 2016 21:03:40 -0400</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Find bears with Pandas</title>
+        <description>&lt;p&gt;Here’s a gist I made to try out Pandas’ .get_html() method.&lt;/p&gt;
+
+&lt;p&gt;It downloads the latest count of reported bear sightings for every town in Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp&quot;&gt;this CT Department of Energy and Environmental Protection (DEEP) page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Sat, 01 Oct 2016 21:57:30 -0400</pubDate>
+        <link>http://example.com/python/2016/10/01/omg-bears.html</link>
+        <guid isPermaLink="true">http://example.com/python/2016/10/01/omg-bears.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+  </channel>
+</rss>
