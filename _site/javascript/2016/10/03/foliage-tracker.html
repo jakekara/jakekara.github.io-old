@@ -1,0 +1,96 @@
+<!-- _includes/base.html -->
+
+
+
+		  
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Visualizing foliage</title>
+    <!-- jQuery  -->
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- my css -->
+    <link rel="stylesheet" href="/css/jk2016.css">
+  </head>
+  <body>
+    <div id="masthead"><a href="/">jakekara.github.io</a></div>
+   <div id="main" class="container"> <div class="container">
+  <h2>Visualizing foliage</h2>
+  <div class="post-meta">Oct 3, 2016</div>
+  <div class="post-body">
+    <p>I wrote a bunch of code to compare foliage in two locations over four year.</p>
+
+<p>You can see it <a href="https://jakekara.github.io/foliage-viz/">here</a></p>
+
+<p>The code is <a href="https://github.com/jakekara/foliage-viz">here</a>.</p>
+
+<p>It uses d3. It works like this:</p>
+
+<ol>
+  <li>
+    <p>Load in a spreadsheet containing a color for each
+day, which my colleague Andrew Ba Tran <a href="https://github.com/trendct-data/ct-leaf-colors-analysis">generated using R</a>.
+The color is meant to be a representative of the foliage color for that day, or
+at least the most-dominant color.</p>
+  </li>
+  <li>
+    <p>Generate a bar for each year, filled with individual div elements that each
+represent a day, and are colored according to the file in step 1.</p>
+  </li>
+  <li>
+    <p>Add a slider to allow you to slide through the days of the year. On each day,
+it shows all four pictures side by side, and theoretically gives you some sense
+of how brilliant the foliage has historically been on a given day. At least
+that’s sort of the over-intellectualized justification for it. It’s really just
+fun and I don’t walk away from a coding challenge.</p>
+  </li>
+</ol>
+
+<h3 id="momentjs">moment.js</h3>
+
+<p>I used <a href="http://momentjs.com/">moment.js</a> to do a few things. It seems to be a
+really nice library.</p>
+
+<p>I used it to map each value from 1 to 366 (leap years) on the slider to an
+actual date, like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="s2">"2016 "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="s2">"YYYY DDD"</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s2">"DD"</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">moment</span><span class="p">(</span><span class="s2">"2016 "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="s2">"YYYY DDD"</span><span class="p">).</span><span class="nx">format</span><span class="p">(</span><span class="s2">"MM"</span><span class="p">)</span>
+<span class="nx">FOL</span><span class="p">.</span><span class="nx">load_date</span> <span class="p">(</span><span class="nx">loc_id</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">,</span> <span class="mi">2015</span><span class="p">);</span> <span class="c1">// , 2020);</span></code></pre></figure>
+
+<p>When the app is bootstrapping, moment.js to get the current date and use it to
+load the thumbnails for the current day (of the past years).</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">FOL</span><span class="p">.</span><span class="nx">load_date</span><span class="p">(</span><span class="nx">loc_id</span><span class="p">,</span>
+	<span class="nx">moment</span><span class="p">().</span><span class="nx">format</span><span class="p">(</span><span class="s2">"MM"</span><span class="p">),</span>
+	<span class="nx">moment</span><span class="p">().</span><span class="nx">format</span><span class="p">(</span><span class="s2">"DD"</span><span class="p">),</span>
+	<span class="mi">2015</span><span class="p">);</span></code></pre></figure>
+
+<h3 id="jekyll">jekyll</h3>
+
+<p>This was the first project I used jekyll for, and it was a perfect application.</p>
+
+<p>I didn’t just design the interactives; but the whole page layout, since our site
+<a href="//trendct.org">trendct.org</a>, doesn’t have a full-width template for projects
+like this that have a lot of components.</p>
+
+<p>A great freebie is that all I have to do is enable the project page in the repo
+settings and I have a live demo of my app.</p>
+
+<p>I got so hooked on Jekyll that I built this blog with it.</p>
+
+<h3 id="failures">Failures</h3>
+
+<p>Visually, the interactive could be better; I’ll admit that. Deadlines.</p>
+
+
+  </div>
+</div>
+</div>
+  </body>
+</html>
