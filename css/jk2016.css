@@ -1,16 +1,55 @@
-@import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700';
+/* @import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700'; */
 
 body {
-    font-family: 'Inconsolata', monospace;
-    font-size: 2em;
-    color: #333;
+    font-family: Monaco, monoscape; /* 'Inconsolata', monospace; */
+    /* font-size: 2em; */
+    background-color:#222;
+    color: gainsboro;
 }
 
+a {
+    color: lightskyblue;
+    color: darkorange;
+}
 
 h1,h2,h3,h4,h5,h6,h7{
-    font-family: arial, sans-serif;
+    padding-left: 0.125em;
     font-weight: 700;
+    width: 100%;
+    color: #222;
+    background-color: gainsboro;
 }
+
+.story-preview a{
+    color: gainsboro;
+}
+
+.story-preview a:hover{
+    color: magenta;
+}
+
+.story-preview a:hover p{
+    background-color: magenta;
+    color: black;
+}
+
+.story-preview a p{
+    background-color: #222;
+    color: gainsboro;
+}
+
+a, a p {
+    background-color: gainsboro;
+    color: #222;
+}
+
+a:hover, a p:hover{
+	     color: black;
+	     text-decoration: none;
+	     background-color: white;
+	     background-color: magenta;
+
+	 }
 
 #main {
     margin-top: 20px;
@@ -18,15 +57,19 @@ h1,h2,h3,h4,h5,h6,h7{
 }
 
 #masthead {
+    text-decoration: blink;
+    color: #222;
+    background-color: gainsboro;
     width: 100%;
-    border-bottom: 1px solid gainsboro;
     padding: 4px;
     padding-left: 10px;
 }
 
 
 .post-meta {
-    color: gray;
+    color: lightgreen;
+    /* color: magenta; */
+    color: blueviolet;
 }
 
 .post-body {
@@ -36,8 +79,6 @@ h1,h2,h3,h4,h5,h6,h7{
 }
 
 .story-preview{
-    border: 0.5px solid gainsboro;
-    border-radius: 4px;
     padding-bottom:10px;
     margin-bottom:10px;
 		      
@@ -50,6 +91,34 @@ h1,h2,h3,h4,h5,h6,h7{
 }
 
 .highlight pre {
-    background-color: #555;
+    background-color: #222;
     color: gainsboro;
+}
+
+.highlight pre .kd{
+    color: lightgreen;
+}
+
+.highlight pre .nx{
+    color: darkorange;
+}
+
+.highlight pre .s2{
+    color: magenta;
+}
+
+.highlight pre .c1{
+    color: red;
+}
+
+.highlight pre .mi{
+    color: mediumpurple;
+}
+
+.terminal_cursor{
+    color: limegreen;
+    -webkit-animation-name: blink;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    -webkit-animation-duration: 1s;
 }

@@ -5,16 +5,28 @@ layout: base
 <div class="home">
   <!-- <h1 class="page-heading">JakeKara.com</h1> -->
   <div class="post-list">
+    <div class="col-xs-12 cmd">$ ls -l</div>
     {% for post in site.posts %}
-      <div class="col-xs-12 story-preview">
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-	    {{ post.excerpt }}
-	  </a>
-        </h2>	
-        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
-	<!-- <div class="post-excerpt">{{post.excerpt}}</div> -->
-      </div>
+    <div class="col-xs-12 story-preview">
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+		<div class="col-xs-3 col-md-2 permissions">-rw-r--r--</div>
+		<div class="col-xs-3 col-md-2">
+		  {{ post.date | date: "%b %-d, %Y" }}
+		</div>
+
+	<div class="col-xs-6 col-md-8">
+	  {{ post.excerpt }}
+	</div>
+      </a>
+      <!-- <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div> -->
+      <!-- <div class="post-excerpt">{{post.excerpt}}</div> -->
+    </div>
     {% endfor %}
+    <div class="col-xs-12 cmd">$ git status</div>
+    <div class="col-xs-12 cmd" id="days_since">On branch master<br/>
+      Your branch is up-to-date with 'origin/master'.<br/>
+      nothing to commit, working directory clean
+    </div>
+    <div class="col-xs-12 cmd" contenteditable="true">$ <span class="terminal_cursor">&block;</span></div>
   </div>
 </div>
