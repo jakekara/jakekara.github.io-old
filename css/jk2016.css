@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700';
 
 body {
-    font-family: "Lucida console", Monaco, 'Inconsolata', monospace;
+    font-family: Monaco, "Lucida console", 'Inconsolata', monospace;
     /* font-size: 2em; */
     background-color:#222;
     color: gainsboro;
