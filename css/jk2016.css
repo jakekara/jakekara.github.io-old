@@ -81,7 +81,10 @@ a:hover, a p:hover{
 .story-preview{
     padding-bottom:10px;
     margin-bottom:10px;
-		      
+}
+
+.story-preview .post-meta, .terminal_cursor{
+    color: chartreuse;
 }
 
 .highlight {
@@ -116,6 +119,10 @@ a:hover, a p:hover{
 }
 
 .terminal_cursor{
-    color: limegreen;
+    /* color: limegreen; */
     font-family: arial;
+}
+
+.permisions {
+    word-wrap: break-word;
 }

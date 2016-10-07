@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Inconsolata:400,700';
 
 body {
-    font-family: "Lucida console", Monaco, 'Inconsolata', monospace;
+    font-family: Monaco, "Lucida console", 'Inconsolata', monospace;
     /* font-size: 2em; */
     background-color:#222;
     color: gainsboro;
@@ -81,7 +81,10 @@ a:hover, a p:hover{
 .story-preview{
     padding-bottom:10px;
     margin-bottom:10px;
-		      
+}
+
+.story-preview .post-meta, .terminal_cursor{
+    color: chartreuse;
 }
 
 .highlight {
@@ -116,6 +119,10 @@ a:hover, a p:hover{
 }
 
 .terminal_cursor{
-    color: limegreen;
+    /* color: limegreen; */
     font-family: arial;
+}
+
+.permisions {
+    word-wrap: break-word;
 }
