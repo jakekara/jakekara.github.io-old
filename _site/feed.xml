@@ -6,15 +6,16 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Oct 2016 18:48:14 -0400</pubDate>
-    <lastBuildDate>Thu, 06 Oct 2016 18:48:14 -0400</lastBuildDate>
+    <pubDate>Fri, 07 Oct 2016 08:21:31 -0400</pubDate>
+    <lastBuildDate>Fri, 07 Oct 2016 08:21:31 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Visualizing foliage</title>
-        <description>&lt;p&gt;I wrote a bunch of code to compare foliage in two locations over four year.&lt;/p&gt;
+        <description>&lt;p&gt;I made a thing to compare foliage in two locations over four years.&lt;/p&gt;
 
-&lt;p&gt;You can see it &lt;a href=&quot;https://jakekara.github.io/foliage-viz/&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can see &lt;a href=&quot;https://jakekara.github.io/foliage-viz/&quot;&gt;the demo here&lt;/a&gt; and on
+&lt;a href=&quot;http://projects.ctmirror.org/content/trend/2016/10/foliage/&quot;&gt;TrendCT.org here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The code is &lt;a href=&quot;https://github.com/jakekara/foliage-viz&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 

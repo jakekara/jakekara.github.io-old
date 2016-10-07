@@ -5,9 +5,10 @@ date:   2016-10-03 19:57:30 -0400
 categories: javascript
 ---
 
-I wrote a bunch of code to compare foliage in two locations over four year.
+I made a thing to compare foliage in two locations over four years.
 
-You can see it [here](https://jakekara.github.io/foliage-viz/)
+You can see [the demo here](https://jakekara.github.io/foliage-viz/) and on
+[TrendCT.org here](http://projects.ctmirror.org/content/trend/2016/10/foliage/).
 
 The code is [here](https://github.com/jakekara/foliage-viz).
 
