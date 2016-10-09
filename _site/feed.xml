@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 08 Oct 2016 23:43:45 -0400</pubDate>
-    <lastBuildDate>Sat, 08 Oct 2016 23:43:45 -0400</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2016 00:11:43 -0400</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2016 00:11:43 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -15,11 +15,30 @@
         <description>&lt;p&gt;I experimented in brute-forcing URL shortening services, written in
 python.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty&quot;&gt;Here’s the code&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty&quot;&gt;Here’s&lt;/a&gt; the repo.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty/blob/master/sample_output/two-chars.tsv&quot;&gt;Here’s a
 .tsv&lt;/a&gt;
 of all the two-character bit.ly links and the URLs they forward to.&lt;/p&gt;
+
+&lt;p&gt;It works like this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Generate the valid URLs&lt;/li&gt;
+  &lt;li&gt;Send an HTTP request with the request library&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There’s been a decent number of
+&lt;a href=&quot;https://www.schneier.com/blog/archives/2016/04/security_risks_11.html&quot;&gt;stories&lt;/a&gt;
+lately about the security risks posed by URL shorteners because they can be trivially brute forced. A lot of shortened links are probably meant to be public, such as URLs shortened for sharing on social media, but I guess some services, like OneDrive, use short URLs for documents.&lt;/p&gt;
+
+&lt;h3 id=&quot;disabling-rediects&quot;&gt;disabling rediects&lt;/h3&gt;
+
+&lt;p&gt;Since I only wanted to find the full URLs that were being redirected to,
+and not actually download their content, I set the requets allow_redirects
+option to False.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_redirects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Sat, 08 Oct 2016 22:57:30 -0400</pubDate>
