@@ -1,4 +1,11 @@
- I made to try out Pandas' .read_html() method in order to turn html tables into dataframes.
+---
+layout: post
+title:  "Finding bears with Pandas"
+date:   2016-10-01 19:57:30 -0400
+categories: python
+---
+
+I made to try out Pandas' .read_html() method in order to turn html tables into dataframes.
 
 It downloads the latest count of reported bear sightings for every town in
 Connecticut from [this CT Department of Energy and Environmental Protection
