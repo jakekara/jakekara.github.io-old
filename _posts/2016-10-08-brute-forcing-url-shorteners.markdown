@@ -18,7 +18,7 @@ It works like this:
 1. Generate the valid URLs
 2. Send an HTTP request with the request library
 
-There's been a decent number of
+There have been a decent number of
 [stories](https://www.schneier.com/blog/archives/2016/04/security_risks_11.html)
 lately about the security risks posed by URL shorteners because they can be trivially brute forced. A lot of shortened links are probably meant to be public, such as URLs shortened for sharing on social media, but I guess some services, like OneDrive, use short URLs for documents.
 

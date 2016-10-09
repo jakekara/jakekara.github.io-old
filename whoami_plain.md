@@ -1,7 +1,7 @@
 ---
 layout: barehtml
 title: whoami
-permalink: /whoami/
+permalink: /whoami_plain/
 ---
 
 I'm Jake Kara. I'm a data editor at [CTMirror.org](//ctmirror.org) and its

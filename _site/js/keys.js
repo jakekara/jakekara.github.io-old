@@ -1,6 +1,7 @@
 var TERM = TERM || {};
 
 TERM = function (in_div, out_div){
+    this.output_count = 0;
     this.div = {};
     this.div.input  = in_div;
     this.div.output = out_div;
@@ -35,16 +36,28 @@ TERM.prototype.backspace = function(){
     this.input().text(in_text.substring(0, in_text.length - 1));
 }
 
-TERM.prototype.evaluate = function(command){
+TERM.prototype.evaluate = function(command, out_count){
+    var that = this;
     var commands = {
 	"help": function(){
-	    return "commands: help, random, whoami"
+	    return "commands: clear, help, random, whoami"
 	},
 	"random": function(){
 	    return "42";
 	},
 	"whoami": function(){
-	  return "How should I know?"  
+	    // return "How should I know?"
+	    d3.html("/whoami_plain/", function(fragment){
+		var sel = "[data-output-id='" + out_count + "']";
+		console.log(fragment);
+		d3.select(sel).html("<br/>");
+		d3.select(sel).node().appendChild(fragment);
+	    });
+	    return "Loading..."
+	},
+	"clear": function(){
+	    var sel = "#" + that.div.output;
+	    d3.select(sel).html("");
 	}
 	    
     }
@@ -59,16 +72,19 @@ TERM.prototype.evaluate = function(command){
 }
 
 TERM.prototype.write = function(output){
+
     this.output()
 	.append("div")
+	.attr("data-output-id", this.output_count)
 	.text(output);
+    this.output_count++;
 }
 
 TERM.prototype.enter = function(){
     var command = this.input().text();
     this.input().text("");
     var stdout = this.output().text();
-    var output = this.evaluate(command);
+    var output = this.evaluate(command, this.output_count + 1);
 
     this.write(this.prompt + command);
     this.write(output);

@@ -24,11 +24,13 @@ h1,h2,h3,h4,h5,h6,h7{
     color: gainsboro;
 }
 
-.story-preview a:hover{
+.story-preview a:hover,
+.story-preview a:focus{
     color: magenta;
 }
 
-.story-preview a:hover p{
+.story-preview a:hover p,
+.story-preview a:focus p{
     background-color: magenta;
     color: black;
 }
@@ -43,7 +45,8 @@ a, a p {
     color: #222;
 }
 
-a:hover, a p:hover{
+a:hover, a p:hover,
+a:focus, a p:focus{
 	     color: black;
 	     text-decoration: none;
 	     background-color: white;

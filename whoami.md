@@ -1,5 +1,5 @@
 ---
-layout: barehtml
+layout: post
 title: whoami
 permalink: /whoami/
 ---
