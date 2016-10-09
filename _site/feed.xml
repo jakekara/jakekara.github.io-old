@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Oct 2016 00:11:43 -0400</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2016 00:11:43 -0400</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2016 09:43:32 -0400</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2016 09:43:32 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -130,12 +130,15 @@ settings and I have a live demo of my app.&lt;/p&gt;
     
       <item>
         <title>Finding bears with Pandas</title>
-        <description>&lt;p&gt;I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.&lt;/p&gt;
+        <description>&lt;p&gt;I wrote some code to get the latest Connecticut bear sightings.&lt;/p&gt;
 
-&lt;p&gt;It downloads the latest count of reported bear sightings for every town in
+&lt;p&gt;I wanted to try out Pandas’ .read_html() method in order to turn html
+tables into dataframes.&lt;/p&gt;
+
+&lt;p&gt;The code downloads the latest count of reported bear sightings for every town in
 Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp&quot;&gt;this CT Department of Energy and Environmental Protection
 (DEEP) page&lt;/a&gt; and
-turns it into a .csv.&lt;/p&gt;
+turns it into a DataFrame and exports .csv.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 01 Oct 2016 19:57:30 -0400</pubDate>
