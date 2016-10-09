@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Oct 2016 11:43:58 -0400</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2016 11:43:58 -0400</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2016 19:08:17 -0400</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2016 19:08:17 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -27,7 +27,7 @@ of all the two-character bit.ly links and the URLs they forward to.&lt;/p&gt;
   &lt;li&gt;Send an HTTP request with the request library&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;There’s been a decent number of
+&lt;p&gt;There have been a decent number of
 &lt;a href=&quot;https://www.schneier.com/blog/archives/2016/04/security_risks_11.html&quot;&gt;stories&lt;/a&gt;
 lately about the security risks posed by URL shorteners because they can be trivially brute forced. A lot of shortened links are probably meant to be public, such as URLs shortened for sharing on social media, but I guess some services, like OneDrive, use short URLs for documents.&lt;/p&gt;
 
