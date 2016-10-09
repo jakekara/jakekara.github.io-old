@@ -1,15 +1,8 @@
----
-layout: post
-title:  "Find bears with Pandas"
-date:   2016-10-01 21:57:30 -0400
-categories: python
----
+ I made to try out Pandas' .read_html() method in order to turn html tables into dataframes.
 
-Here's a gist I made to try out Pandas' .read_html() method.
+It downloads the latest count of reported bear sightings for every town in
+Connecticut from [this CT Department of Energy and Environmental Protection
+(DEEP) page](http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp) and
+turns it into a .csv.
 
-It downloads the latest count of reported bear sightings for every town in Connecticut from [this CT Department of Energy and Environmental Protection (DEEP) page](http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp).
-
-First I wrote it as its own class, then I rewrote it in as few lines as possible:
-
-<script src="https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937.js"></script>
 

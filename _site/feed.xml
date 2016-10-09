@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 Oct 2016 08:21:31 -0400</pubDate>
-    <lastBuildDate>Fri, 07 Oct 2016 08:21:31 -0400</lastBuildDate>
+    <pubDate>Sat, 08 Oct 2016 21:59:34 -0400</pubDate>
+    <lastBuildDate>Sat, 08 Oct 2016 21:59:34 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -89,22 +89,19 @@ settings and I have a live demo of my app.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Find bears with Pandas</title>
-        <description>&lt;p&gt;Here’s a gist I made to try out Pandas’ .read_html() method.&lt;/p&gt;
+        <title>Omg Bears</title>
+        <description>&lt;p&gt;I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.&lt;/p&gt;
 
-&lt;p&gt;It downloads the latest count of reported bear sightings for every town in Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp&quot;&gt;this CT Department of Energy and Environmental Protection (DEEP) page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;First I wrote it as its own class, then I rewrote it in as few lines as possible:&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;It downloads the latest count of reported bear sightings for every town in
+Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp&quot;&gt;this CT Department of Energy and Environmental Protection
+(DEEP) page&lt;/a&gt; and
+turns it into a .csv.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 01 Oct 2016 21:57:30 -0400</pubDate>
-        <link>http://example.com/python/2016/10/01/omg-bears.html</link>
-        <guid isPermaLink="true">http://example.com/python/2016/10/01/omg-bears.html</guid>
+        <pubDate>Sat, 01 Oct 2016 00:00:00 -0400</pubDate>
+        <link>http://example.com/2016/10/01/omg-bears.html</link>
+        <guid isPermaLink="true">http://example.com/2016/10/01/omg-bears.html</guid>
         
-        
-        <category>python</category>
         
       </item>
     
