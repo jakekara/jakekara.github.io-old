@@ -18,8 +18,6 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <!-- my css -->
     <link rel="stylesheet" href="./css/jk2016.css">
-    <!-- keys -->
-    <script src="js/jk.keys.js"></script>
   </head>
   <body>
 
@@ -32,60 +30,68 @@
 		  
 
 <!-- <div class="home"> -->
-  <!-- <h1 class="page-heading">JakeKara.com</h1> -->
-  <div class="post-list">
-    <div class="col-xs-12 cmd">$ ls -l</div>
-    
-    <div class="col-xs-12 story-preview">
-      <a class="post-link post-meta" href="/javascript/2016/10/03/foliage-tracker.html">
-		<div class="col-xs-5 col-sm-2 permissions">-rw-r--r--</div>
-		<div class="col-xs-7 col-sm-2">
-		  Oct 3, 2016
-		</div>
+<!-- <h1 class="page-heading">JakeKara.com</h1> -->
+<div class="post-list">
+  <div class="col-xs-12 cmd">$ ls -l</div>
+  
+  <div class="col-xs-12 story-preview">
+    <a class="post-link post-meta" href="/javascript/2016/10/03/foliage-tracker.html">
+      <div class="col-xs-5 col-sm-2 permissions">-rw-r--r--</div>
+      <div class="col-xs-7 col-sm-2">
+	Oct 3, 2016
+      </div>
 
-	<div class="col-xs-12 col-sm-8">
-	  <p>I made a thing to compare foliage in two locations over four years.</p>
-
-
-	</div>
-      </a>
-      <!-- <div class="post-meta">Oct 3, 2016</div> -->
-      <!-- <div class="post-excerpt"><p>I made a thing to compare foliage in two locations over four years.</p>
-
-</div> -->
-    </div>
-    
-    <div class="col-xs-12 story-preview">
-      <a class="post-link post-meta" href="/2016/10/01/omg-bears.html">
-		<div class="col-xs-5 col-sm-2 permissions">-rw-r--r--</div>
-		<div class="col-xs-7 col-sm-2">
-		  Oct 1, 2016
-		</div>
-
-	<div class="col-xs-12 col-sm-8">
-	  <p>I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.</p>
+      <div class="col-xs-12 col-sm-8">
+	<p>I made a thing to compare foliage in two locations over four years.</p>
 
 
-	</div>
-      </a>
-      <!-- <div class="post-meta">Oct 1, 2016</div> -->
-      <!-- <div class="post-excerpt"><p>I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.</p>
+      </div>
+    </a>
+    <!-- <div class="post-meta">Oct 3, 2016</div> -->
+    <!-- <div class="post-excerpt"><p>I made a thing to compare foliage in two locations over four years.</p>
 
 </div> -->
-    </div>
-    
-    <div class="col-xs-12 cmd">$ git status</div>
-    <div class="col-xs-12 cmd" id="days_since">On branch master<br/>
-      Your branch is up-to-date with 'origin/master'.<br/>
-      nothing to commit, working directory clean
-    </div>
-    <div class="col-xs-12 cmd">$
-      <!-- <span contenteditable="true">&nbsp;</span> -->
-      <span class="terminal_cursor">&block;</span>
-    </div>
   </div>
+  
+  <div class="col-xs-12 story-preview">
+    <a class="post-link post-meta" href="/2016/10/01/omg-bears.html">
+      <div class="col-xs-5 col-sm-2 permissions">-rw-r--r--</div>
+      <div class="col-xs-7 col-sm-2">
+	Oct 1, 2016
+      </div>
+
+      <div class="col-xs-12 col-sm-8">
+	<p>I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.</p>
+
+
+      </div>
+    </a>
+    <!-- <div class="post-meta">Oct 1, 2016</div> -->
+    <!-- <div class="post-excerpt"><p>I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.</p>
+
+</div> -->
+  </div>
+  
+  <div class="col-xs-12 cmd">$ git status</div>
+  <div class="col-xs-12 cmd" id="days_since">On branch master<br/>
+    Your branch is up-to-date with 'origin/master'.<br/>
+    nothing to commit, working directory clean
+  </div>
+  <div class="col-xs-12 cmd">
+    <div id="terminal_output"></div>
+  </div>
+
+  <div class="col-xs-12 cmd">$
+    <span id="terminal_input"></span>
+    <span class="terminal_cursor">&block;</span>
+  </div>
+</div>
+<!-- keys -->
+<script src="./js/keys.js"></script>
+
 <!-- </div> -->
 </div>
     </div>
   </body>
+
 </html>

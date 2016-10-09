@@ -3,33 +3,40 @@ layout: base
 ---
 {% include base.html %}
 <!-- <div class="home"> -->
-  <!-- <h1 class="page-heading">JakeKara.com</h1> -->
-  <div class="post-list">
-    <div class="col-xs-12 cmd">$ ls -l</div>
-    {% for post in site.posts %}
-    <div class="col-xs-12 story-preview">
-      <a class="post-link post-meta" href="{{ post.url | prepend: site.baseurl }}">
-		<div class="col-xs-5 col-sm-2 permissions">-rw-r--r--</div>
-		<div class="col-xs-7 col-sm-2">
-		  {{ post.date | date: "%b %-d, %Y" }}
-		</div>
+<!-- <h1 class="page-heading">JakeKara.com</h1> -->
+<div class="post-list">
+  <div class="col-xs-12 cmd">$ ls -l</div>
+  {% for post in site.posts %}
+  <div class="col-xs-12 story-preview">
+    <a class="post-link post-meta" href="{{ post.url | prepend: site.baseurl }}">
+      <div class="col-xs-5 col-sm-2 permissions">-rw-r--r--</div>
+      <div class="col-xs-7 col-sm-2">
+	{{ post.date | date: "%b %-d, %Y" }}
+      </div>
 
-	<div class="col-xs-12 col-sm-8">
-	  {{ post.excerpt }}
-	</div>
-      </a>
-      <!-- <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div> -->
-      <!-- <div class="post-excerpt">{{post.excerpt}}</div> -->
-    </div>
-    {% endfor %}
-    <div class="col-xs-12 cmd">$ git status</div>
-    <div class="col-xs-12 cmd" id="days_since">On branch master<br/>
-      Your branch is up-to-date with 'origin/master'.<br/>
-      nothing to commit, working directory clean
-    </div>
-    <div class="col-xs-12 cmd">$
-      <!-- <span contenteditable="true">&nbsp;</span> -->
-      <span class="terminal_cursor">&block;</span>
-    </div>
+      <div class="col-xs-12 col-sm-8">
+	{{ post.excerpt }}
+      </div>
+    </a>
+    <!-- <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div> -->
+    <!-- <div class="post-excerpt">{{post.excerpt}}</div> -->
   </div>
+  {% endfor %}
+  <div class="col-xs-12 cmd">$ git status</div>
+  <div class="col-xs-12 cmd" id="days_since">On branch master<br/>
+    Your branch is up-to-date with 'origin/master'.<br/>
+    nothing to commit, working directory clean
+  </div>
+  <div class="col-xs-12 cmd">
+    <div id="terminal_output"></div>
+  </div>
+
+  <div class="col-xs-12 cmd">$
+    <span id="terminal_input"></span>
+    <span class="terminal_cursor">&block;</span>
+  </div>
+</div>
+<!-- keys -->
+<script src="{{base}}/js/keys.js"></script>
+
 <!-- </div> -->
