@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 08 Oct 2016 23:28:48 -0400</pubDate>
-    <lastBuildDate>Sat, 08 Oct 2016 23:28:48 -0400</lastBuildDate>
+    <pubDate>Sat, 08 Oct 2016 23:35:48 -0400</pubDate>
+    <lastBuildDate>Sat, 08 Oct 2016 23:35:48 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -89,7 +89,7 @@ settings and I have a live demo of my app.&lt;/p&gt;
       </item>
     
       <item>
-        <title>Omg Bears</title>
+        <title>Finding bears with Pandas</title>
         <description>&lt;p&gt;I made to try out Pandas’ .read_html() method in order to turn html tables into dataframes.&lt;/p&gt;
 
 &lt;p&gt;It downloads the latest count of reported bear sightings for every town in
@@ -98,10 +98,12 @@ Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/be
 turns it into a .csv.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 01 Oct 2016 00:00:00 -0400</pubDate>
-        <link>http://example.com/2016/10/01/omg-bears.html</link>
-        <guid isPermaLink="true">http://example.com/2016/10/01/omg-bears.html</guid>
+        <pubDate>Sat, 01 Oct 2016 19:57:30 -0400</pubDate>
+        <link>http://example.com/python/2016/10/01/omg-bears.html</link>
+        <guid isPermaLink="true">http://example.com/python/2016/10/01/omg-bears.html</guid>
         
+        
+        <category>python</category>
         
       </item>
     
