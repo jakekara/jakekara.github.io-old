@@ -120,6 +120,20 @@ a:hover, a p:hover{
     color: mediumpurple;
 }
 
+.highlight pre .p{
+    color: greenyellow;
+}
+
+.highlight pre .o{
+    color: dodgerblue;
+}
+.highlight pre .n{
+    color: darkorange;
+}
+.highlight pre .bp{
+    color: deeppink;
+}
+
 .terminal_cursor{
     color: chartreuse;
     font-family: arial;

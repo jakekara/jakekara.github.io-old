@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<!-- _includes/base.html -->
+
+
+
+		  
+
+<html lang="en">
+  <head>
+    <title>jakekara.github.com</title>
+    <!-- jQuery  -->
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- D3  -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- my css -->
+    <link rel="stylesheet" href="/css/jk2016.css">
+  </head>
+  <body>
+
+    <div id="masthead"><a href="/">jakekara.github.io</a></div>
+    <div class="container">
+    <div id="main"><div class="container">
+  <h2>Brute forcing URL shorteners</h2>
+  <div class="post-meta">Oct 8, 2016</div>
+  <div class="post-body">
+    <p>I experimented in brute-forcing URL shortening services, written in
+python.</p>
+
+<p><a href="https://github.com/jakekara/python-get-shorty">Here’s</a> the repo.</p>
+
+<p><a href="https://github.com/jakekara/python-get-shorty/blob/master/sample_output/two-chars.tsv">Here’s a
+.tsv</a>
+of all the two-character bit.ly links and the URLs they forward to.</p>
+
+<p>It works like this:</p>
+
+<ol>
+  <li>Generate the valid URLs</li>
+  <li>Send an HTTP request with the request library</li>
+</ol>
+
+<p>There’s been a decent number of
+<a href="https://www.schneier.com/blog/archives/2016/04/security_risks_11.html">stories</a>
+lately about the security risks posed by URL shorteners because they can be trivially brute forced. A lot of shortened links are probably meant to be public, such as URLs shortened for sharing on social media, but I guess some services, like OneDrive, use short URLs for documents.</p>
+
+<h3 id="disabling-rediects">disabling rediects</h3>
+
+<p>Since I only wanted to find the full URLs that were being redirected to,
+and not actually download their content, I set the requets allow_redirects
+option to False.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span></code></pre></figure>
+
+
+  </div>
+</div>
+</div>
+    </div>
+  </body>
+
+</html>
