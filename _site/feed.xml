@@ -6,16 +6,15 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Oct 2016 09:44:39 -0400</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2016 09:44:39 -0400</lastBuildDate>
+    <pubDate>Sun, 09 Oct 2016 11:40:45 -0400</pubDate>
+    <lastBuildDate>Sun, 09 Oct 2016 11:40:45 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Brute forcing URL shorteners</title>
-        <description>&lt;p&gt;I experimented in brute-forcing URL shortening services, written in
-python.&lt;/p&gt;
+        <description>&lt;p&gt;I experimented in brute-forcing URL shortening services.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty&quot;&gt;Here’s&lt;/a&gt; the repo.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty&quot;&gt;Here’s&lt;/a&gt; the repo (Python).&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty/blob/master/sample_output/two-chars.tsv&quot;&gt;Here’s a
 .tsv&lt;/a&gt;

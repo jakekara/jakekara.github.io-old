@@ -5,10 +5,9 @@ date:   2016-10-08 22:57:30 -0400
 categories: python
 ---
 
-I experimented in brute-forcing URL shortening services, written in
-python.
+I experimented in brute-forcing URL shortening services.
 
-[Here's](https://github.com/jakekara/python-get-shorty) the repo.
+[Here's](https://github.com/jakekara/python-get-shorty) the repo (Python).
 
 [Here's a
 .tsv](https://github.com/jakekara/python-get-shorty/blob/master/sample_output/two-chars.tsv)
