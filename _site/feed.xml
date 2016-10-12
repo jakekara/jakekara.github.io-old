@@ -6,9 +6,28 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Oct 2016 19:08:17 -0400</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2016 19:08:17 -0400</lastBuildDate>
+    <pubDate>Wed, 12 Oct 2016 19:19:01 -0400</pubDate>
+    <lastBuildDate>Wed, 12 Oct 2016 19:19:01 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Ghostery doesn't like AWS Beanstalk</title>
+        <description>&lt;p&gt;Ghostery blocks assets from crazy AWS beanstalk endpoints.&lt;/p&gt;
+
+&lt;p&gt;I spent half a day pulling my hair out over this, so I’m posting an
+admission of my own stupidity as a public service.&lt;/p&gt;
+
+&lt;p&gt;If your css and JS assets aren’t loading when you’re testing a Beanstalk
+service, just turn off Ghostery. That’s it.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Oct 2016 18:30:00 -0400</pubDate>
+        <link>http://example.com/aws/2016/10/12/aws-beanstalk-and-ghostery.html</link>
+        <guid isPermaLink="true">http://example.com/aws/2016/10/12/aws-beanstalk-and-ghostery.html</guid>
+        
+        
+        <category>AWS</category>
+        
+      </item>
     
       <item>
         <title>Brute forcing URL shorteners</title>
