@@ -8,6 +8,7 @@ TERM = function (in_div, out_div){
     this.cursor = "&block;"
     this.prompt = "$ ";
     this.go();
+    this.history = [];
 }
 
 TERM.prototype.input = function(){
@@ -36,28 +37,41 @@ TERM.prototype.backspace = function(){
     this.input().text(in_text.substring(0, in_text.length - 1));
 }
 
+TERM.prototype.typeout = function(html, div){
+    
+}
+
 TERM.prototype.evaluate = function(command, out_count){
     var that = this;
+    this.history.push(command);
     var commands = {
 	"help": function(){
-	    return "commands: clear, help, random, whoami"
+	    return "commands: clear, history, help, random, whoami"
 	},
 	"random": function(){
 	    return "42";
 	},
 	"whoami": function(){
 	    // return "How should I know?"
-	    d3.html("/whoami_plain/", function(fragment){
+	    setTimeout(function(){
+		d3.html("/whoami_plain/", function(fragment){
 		var sel = "[data-output-id='" + out_count + "']";
-		console.log(fragment);
 		d3.select(sel).html("<br/>");
 		d3.select(sel).node().appendChild(fragment);
-	    });
+		});
+	    }, 250);
 	    return "Loading..."
 	},
 	"clear": function(){
 	    var sel = "#" + that.div.output;
 	    d3.select(sel).html("");
+	},
+	"history": function(){
+	    ret = "";
+	    for (var i = 0; i < that.history.length; i++){
+		ret += (that.history[i]) + "<br/>";
+	    }
+	    return ret;
 	}
 	    
     }
@@ -67,7 +81,7 @@ TERM.prototype.evaluate = function(command, out_count){
     }
    
     else {
-	return command;
+	return command + ": command not found (try \"help\")";
     }
 }
 
@@ -76,7 +90,7 @@ TERM.prototype.write = function(output){
     this.output()
 	.append("div")
 	.attr("data-output-id", this.output_count)
-	.text(output);
+	.html(output);
     this.output_count++;
 }
 
