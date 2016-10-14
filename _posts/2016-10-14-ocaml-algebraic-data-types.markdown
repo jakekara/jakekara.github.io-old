@@ -15,8 +15,11 @@ began with functional programming, including using modules and functors,
 and then moved to object oriented programming. It handles both paradigms
 well.
 
-One of my favorite features was algebraic data types and pattern
-matching. I'd never seen these powerful features before.
+A fellow programmer who doesn't write functional code asked why I liked
+OCaml after taking this class, and I told him about algebraic data
+types. The best example I could think of was expressing a deck of cards in
+code, which is certainly possible in any programming paradigm and language,
+but I think much more pleasant in OCaml.
 
 Here's an algebraic data type I defined to represet card faces (in cards.ml):
 
