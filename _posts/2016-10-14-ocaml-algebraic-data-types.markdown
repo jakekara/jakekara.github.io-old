@@ -35,7 +35,7 @@ type suit =
   | Diamonds | Clubs | Hearts | Spades
 {% endhighlight %}
 
-... nd then defined a card as a suit, face tuple:
+... and then defined a card as a suit, face tuple:
 
 {% highlight ocaml %}
 (* Type for cards *)
