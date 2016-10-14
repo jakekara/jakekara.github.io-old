@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Finding bears with Pandas"
+title:  "OCaml algebraic data types and pattern matching"
 date:   2016-10-14 18:30:00 -0400
 categories: ocaml cardstuff
 ---

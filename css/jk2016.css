@@ -124,6 +124,10 @@ a:focus, a p:focus{
     color: lightskyblue;
 }
 
+.highlight pre .kt{
+    color: skyblue;
+}
+
 .highlight pre .mi{
     color: mediumpurple;
 }
