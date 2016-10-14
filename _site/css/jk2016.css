@@ -115,12 +115,22 @@ a:focus, a p:focus{
     color: magenta;
 }
 
-.highlight pre .c1{
+.highlight pre .c1,
+.highlight pre .c{
     color: red;
+}
+
+.highlight pre .k{
+    color: lightskyblue;
 }
 
 .highlight pre .mi{
     color: mediumpurple;
+}
+
+.highlight pre .nc,
+.highlight pre .nn{
+    color: hotpink;;
 }
 
 .highlight pre .p{
