@@ -37,8 +37,11 @@ began with functional programming, including using modules and functors,
 and then moved to object oriented programming. It handles both paradigms
 well.</p>
 
-<p>One of my favorite features was algebraic data types and pattern
-matching. I’d never seen these powerful features before.</p>
+<p>A fellow programmer who doesn’t write functional code asked why I liked
+OCaml after taking this class, and I told him about algebraic data
+types. The best example I could think of was expressing a deck of cards in
+code, which is certainly possible in any programming paradigm and language,
+but I think much more pleasant in OCaml.</p>
 
 <p>Here’s an algebraic data type I defined to represet card faces (in cards.ml):</p>
 
@@ -53,7 +56,7 @@ matching. I’d never seen these powerful features before.</p>
 <span class="k">type</span> <span class="n">suit</span> <span class="p">=</span>
   <span class="p">|</span> <span class="nc">Diamonds</span> <span class="p">|</span> <span class="nc">Clubs</span> <span class="p">|</span> <span class="nc">Hearts</span> <span class="p">|</span> <span class="nc">Spades</span></code></pre></figure>
 
-<p>… nd then defined a card as a suit, face tuple:</p>
+<p>… and then defined a card as a suit, face tuple:</p>
 
 <figure class="highlight"><pre><code class="language-ocaml" data-lang="ocaml"><span class="c">(* Type for cards *)</span>
 <span class="k">type</span> <span class="n">card</span> <span class="p">=</span> <span class="n">suit</span> <span class="p">*</span> <span class="n">face_value</span></code></pre></figure>
