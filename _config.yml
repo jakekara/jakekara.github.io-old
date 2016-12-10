@@ -28,3 +28,4 @@ github_username:  jakekara
 # Build settings
 markdown: kramdown
 exclude: ["old"]
+include: [".well-known"]
