@@ -5,40 +5,35 @@ https://keybase.io/jakekara
 I hereby claim:
 
   * I am an admin of https://jakekara.github.io
-    * I am jakekara (https://keybase.io/jakekara) on keybase.
-      * I have a public key with fingerprint 0D3D 4A89 09C5 B913 269D  6713
-    * 963C E336 3633 EACE
+  * I am jakekara (https://keybase.io/jakekara) on keybase.
+  * I have a public key with fingerprint 0D3D 4A89 09C5 B913 269D  6713 963C E336 3633 EACE
 
 To do so, I am signing this object:
 
 {
     "body": {
-            "key": {
-	                "eldest_kid":
-    "01013f645126ad212ff721b385c3a93005c69d1a890736e39e61f295186fb5eed9570a",
-                "fingerprint": "0d3d4a8909c5b913269d6713963ce3363633eace",
-		            "host": "keybase.io",
-			                "key_id": "963ce3363633eace",
-					            "kid":
-    "01013f645126ad212ff721b385c3a93005c69d1a890736e39e61f295186fb5eed9570a",
-                "uid": "b63df4f9fc92c955cd5d49ad6fc03f19",
-		            "username": "jakekara"
-			            },
-				            "service": {
-					                "hostname":
-    "jakekara.github.io",
-                "protocol": "https:"
-		        },
-			        "type": "web_service_binding",
-				        "version": 1
-					    },
-					        "ctime": 1481409664,
-						    "expire_in": 157680000,
-						        "prev":
-    "35578fe410b8d2d9a9daa1669346a3703b5fc93fd118891858130bfff00d426b",
-        "seqno": 9,
-	    "tag": "signature"
-	    }
+        "key": {
+            "eldest_kid": "01013f645126ad212ff721b385c3a93005c69d1a890736e39e61f295186fb5eed9570a",
+            "fingerprint": "0d3d4a8909c5b913269d6713963ce3363633eace",
+            "host": "keybase.io",
+            "key_id": "963ce3363633eace",
+            "kid": "01013f645126ad212ff721b385c3a93005c69d1a890736e39e61f295186fb5eed9570a",
+            "uid": "b63df4f9fc92c955cd5d49ad6fc03f19",
+            "username": "jakekara"
+        },
+        "service": {
+            "hostname": "jakekara.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1481409664,
+    "expire_in": 157680000,
+    "prev": "35578fe410b8d2d9a9daa1669346a3703b5fc93fd118891858130bfff00d426b",
+    "seqno": 9,
+    "tag": "signature"
+}
 
 which yields the signature:
 
