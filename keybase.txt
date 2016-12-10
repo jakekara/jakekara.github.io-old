@@ -1,0 +1,78 @@
+==================================================================
+https://keybase.io/jakekara
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jakekara.github.io
+    * I am jakekara (https://keybase.io/jakekara) on keybase.
+      * I have a public key with fingerprint 0D3D 4A89 09C5 B913 269D  6713
+    * 963C E336 3633 EACE
+
+To do so, I am signing this object:
+
+{
+    "body": {
+            "key": {
+	                "eldest_kid":
+    "01013f645126ad212ff721b385c3a93005c69d1a890736e39e61f295186fb5eed9570a",
+                "fingerprint": "0d3d4a8909c5b913269d6713963ce3363633eace",
+		            "host": "keybase.io",
+			                "key_id": "963ce3363633eace",
+					            "kid":
+    "01013f645126ad212ff721b385c3a93005c69d1a890736e39e61f295186fb5eed9570a",
+                "uid": "b63df4f9fc92c955cd5d49ad6fc03f19",
+		            "username": "jakekara"
+			            },
+				            "service": {
+					                "hostname":
+    "jakekara.github.io",
+                "protocol": "https:"
+		        },
+			        "type": "web_service_binding",
+				        "version": 1
+					    },
+					        "ctime": 1481409664,
+						    "expire_in": 157680000,
+						        "prev":
+    "35578fe410b8d2d9a9daa1669346a3703b5fc93fd118891858130bfff00d426b",
+        "seqno": 9,
+	    "tag": "signature"
+	    }
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Comment: GPGTools - https://gpgtools.org
+
+owGtUm1QVFUYXj4UoTHKaHJMirmwgLjYPffce/fepYamITUzFcJE2Vzux7m7l3U/
+uLtAQOsIIgJGrpMD8bmRORiETOpMYoPD8BEW0YhJQ5ZSQZ+mEYrZENq9VH+afnbO
+jzPnPc/znOd55/UvDdFFBNU+PknT8KdPgoZ/5HVZG8uPl2C8SyzCTCWYHS0caJeI
+PF6LXRYxE4YDHECJJilA0JxIAEKSjATgIUMJkGMhjlMCzYqAY1jcCGkEWUQDiWAp
+wNASTyEkspQR5zADJslOK1Lciuz0arIiFEmNxAoUzwJIqCK0EUCWhgKCkFY3RJyA
+VKLN5dEYqjme86A1skutqRfLgr3/wP/PvvMX5HgaihIpsZLAEgJLUYJIiSTLibQk
+4FACrAb0IMXJOZCKzuXsyM4pHOYzYGq1QFaNqY3VkvwLscYqe235/F+p3IrL6xJc
+u9R3m9fr9pg0vrfIrREKEW/5W8rCy05R7abKKECKR3Y5MRNQkYJX1rQByQASZ2ma
+NGDoJbesIIusISgjzeDq0v5BBaok3ElRRkZCJMB5RiRElmNFjgM0zUKS5qARhzyl
+5oWSCADDsIChGABxXpIkHBdJguYxLV2e04WZWNUnZ1U1PbLVyXnzFYT5IqqCV4bq
+giJ0ixcFa3Omiwi/75/hs6dG3n1+vcX0qtwYErLoYn963yF33rnWtSXJ0a2RDaV6
+fc5no4YYyzYU/XKrJ70MzcdU+mszK8TXc/ZVN471fnxH8Jd1PRyzwnqnea689EBW
+rmNav7nGdb2Qbd0fTKRNrexJ0bd11/9WVzNysrpzg+/oifWReTmF4brtSxsdl16o
+bRqrmxrnurdYwwLHPm+oals2M0/OTiTUl6Or8nQNNz86WHLe0rckuAx/MDsz+/g3
+jrLVdnYu8ZTPd3srN/607cC19z7s/iH8ZEfxR0MtTavOnP72yKqq5sRa7/Vt8/5k
+zx+jR+Oe2NRxc3h3KJa9byCtsWl45K0NN1682rn5Si8+svztrbPjX50ey35ouQXG
+Dxlr3m0vto2ZNua2P5bsn9jT0h8XvuW1gWsXvn/klvmLmYnLxccm9ybHOlabKcUy
+dWsyDBS1T795Fpzxx5obKntO3LyS0ZKab7CFxA++MUglBZ46r9zTXEXpA0e4s4c7
++1IfVWYf+N3UnJnyK0i8S0Txl9qSKnrXJVUO7Igy1VX0mYOa0s8tZg5mXY431MQG
+HMKXUVP02lOFgfB3epZcgNN74nb/EjeqfDAvRAea5jrC9ib6vnY8e2NnzG3z0I51
+CfIry6gVm6rhIOH8dCZDjHxuIrQog07owrb3l9Zn9N6f9kzKd10NkRc7YuOetGM/
+6w9n3xuV8D4wV/8J
+=jNlG
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jakekara
+
+==================================================================
