@@ -5,7 +5,9 @@ date:   2016-10-01 19:57:30 -0400
 categories: python
 ---
 
-I wrote some code to get the latest Connecticut bear sightings. Here's [the gist](https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937)
+I wrote some code to get the latest Connecticut bear sightings.
+
+Here's [the gist](https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937)
 
 I wanted to try out Pandas' .read_html() method in order to turn html
 tables into dataframes.
