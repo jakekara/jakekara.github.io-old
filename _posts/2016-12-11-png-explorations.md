@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Apple screenshot PNGs contain non-standard chunk"
-date:   2016-10-01 19:57:30 -0400
+date:   2016-12-11 19:50:30 -0400
 categories: python
 ---
 
