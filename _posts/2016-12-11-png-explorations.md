@@ -23,6 +23,8 @@ that wasn't documented: iDOT. Here's the out (note that because there are
 so many IDAT chunks in a given file, I just print the number and combined
 size at the end, or else the terminal output would just be way too long.):
 
+
+  {% highlight bash %}
      Valid PNG signature
      ====================
      chunk_length: 13
@@ -51,3 +53,4 @@ size at the end, or else the terminal output would just be way too long.):
      chunk_type:  IEND
      ====================
      Found a total of 642 IDAT chunks consuming 10512756 bytes.
+{% endhighlight %}

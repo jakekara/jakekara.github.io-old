@@ -29,9 +29,9 @@ These are the two command line tool examples:
 * getall.py - Get status of all airports in the airports.py list and save
   them to all.json. Usage:
 
-  ```
+  {% highlight javascript %}
   getall.py
-  ```
+  {% endhighlight %}
 
 * getstatus - Get the the status of one airport and print to stdout. Usage:
 
