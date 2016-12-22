@@ -8,7 +8,7 @@ categories: python
 Here's some code to fetch airport status from the FAA's airport status
 API.
 
-The (API)[http://services.faa.gov/docs/services/airport/#airportStatus] itself is pretty minimal.
+The [API](http://services.faa.gov/docs/services/airport/#airportStatus) itself is pretty minimal.
 
 You can get XML or JSON, but I'm just interested in JSON.
 
