@@ -6,9 +6,154 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Oct 2016 15:05:48 -0400</pubDate>
-    <lastBuildDate>Sun, 23 Oct 2016 15:05:48 -0400</lastBuildDate>
+    <pubDate>Thu, 22 Dec 2016 17:51:55 -0500</pubDate>
+    <lastBuildDate>Thu, 22 Dec 2016 17:51:55 -0500</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Fetching FAA airport status in python</title>
+        <description>&lt;p&gt;Here’s some code to fetch airport status from the FAA’s airport status
+API.&lt;/p&gt;
+
+&lt;p&gt;The API itself is pretty minimal: http://services.faa.gov/docs/services/airport/#airportStatus&lt;/p&gt;
+
+&lt;p&gt;You can get XML or JSON, but I’m just interested in JSON.&lt;/p&gt;
+
+&lt;h3 id=&quot;files&quot;&gt;Files&lt;/h3&gt;
+
+&lt;p&gt;There are two “library” files that can be used in your code, and two
+command line scripts.&lt;/p&gt;
+
+&lt;p&gt;These are the two libraries:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;airports.py - Contains a list of (airport code, airport name), and a method
+for performing a simple kkeyword search of airports (the search() method)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;airportstatus.py - Performs API calls with the get_status() method.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are the two command line tool examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;getall.py - Get status of all airports in the airports.py list and save
+them to all.json. Usage:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  python getall.py
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;getstatus - Get the the status of one airport and print to stdout. Usage:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    python getstatus.py BDL
+    {
+      &quot;status&quot;: {
+        &quot;minDelay&quot;: &quot;&quot;, 
+        &quot;maxDelay&quot;: &quot;&quot;, 
+        &quot;trend&quot;: &quot;&quot;, 
+        &quot;reason&quot;: &quot;No known delays for this airport.&quot;, 
+        &quot;closureEnd&quot;: &quot;&quot;, 
+        &quot;avgDelay&quot;: &quot;&quot;, 
+        &quot;closureBegin&quot;: &quot;&quot;, 
+        &quot;endTime&quot;: &quot;&quot;, 
+        &quot;type&quot;: &quot;&quot;
+      }, 
+      &quot;ICAO&quot;: &quot;KBDL&quot;, 
+      &quot;name&quot;: &quot;Bradley International&quot;, 
+      &quot;city&quot;: &quot;Windsor Locks&quot;, 
+      &quot;IATA&quot;: &quot;BDL&quot;, 
+      &quot;delay&quot;: &quot;false&quot;, 
+      &quot;state&quot;: &quot;Connecticut&quot;, 
+      &quot;weather&quot;: {
+        &quot;wind&quot;: &quot;Northwest at 3.5mph&quot;, 
+        &quot;weather&quot;: &quot;Mostly Cloudy&quot;, 
+        &quot;meta&quot;: {
+          &quot;url&quot;: &quot;http://weather.gov/&quot;, 
+          &quot;credit&quot;: &quot;NOAA's National Weather Service&quot;, 
+          &quot;updated&quot;: &quot;4:51 PM Local&quot;
+        }, 
+        &quot;temp&quot;: &quot;40.0 F (4.4 C)&quot;, 
+        &quot;visibility&quot;: 10.0
+      }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 11 Dec 2016 18:50:30 -0500</pubDate>
+        <link>http://example.com/python/2016/12/11/airportstatus.html</link>
+        <guid isPermaLink="true">http://example.com/python/2016/12/11/airportstatus.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Apple screenshot PNGs contain non-standard chunk</title>
+        <description>&lt;p&gt;I did some idle poking around in the PNG file format, and found something weird.&lt;/p&gt;
+
+&lt;p&gt;Here’s &lt;a href=&quot;https://gist.github.com/jakekara/8e667b7d31350692f7439cb5d0324d05&quot;&gt;the gist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I read up just enough on the .PNG standard to get a sense of how the data
+is structured. The first few bytes in the file are the same on every PNG,
+followed by a series of “chunks” that are structured the same way.&lt;/p&gt;
+
+&lt;p&gt;Each chunk has a chunk type, which is one of set of predefined chunks, such
+as IHDR for the image header, and IDAT for the image data. I wrote a simple
+loop to run through each chunk and print out the chunk type and its length
+in bytes.&lt;/p&gt;
+
+&lt;p&gt;Oddly enough, the .PNG I was using to test out my code had a chunk type
+that wasn’t documented: iDOT. Here’s the out (note that because there are
+so many IDAT chunks in a given file, I just print the number and combined
+size at the end, or else the terminal output would just be way too long.):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Valid PNG signature
+ ====================
+ chunk_length: 13
+ chunk_type:  IHDR
+ width:  2818
+ height:  2328
+ bit_depth:  8
+ colour_type:  6c
+ compression_method:  0
+ filter_method:  0
+ interlace_method:  0
+ ====================
+ chunk_length: 2728
+ chunk_type:  iCCP
+ ====================
+ chunk_length: 9
+ chunk_type:  pHYs
+ ====================
+ chunk_length: 415
+ chunk_type:  iTXt
+ ====================
+ chunk_length: 28
+ chunk_type:  iDOT
+ ====================
+ chunk_length: 0
+ chunk_type:  IEND
+ ====================
+ Found a total of 642 IDAT chunks consuming 10512756 bytes.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 11 Dec 2016 18:50:30 -0500</pubDate>
+        <link>http://example.com/python/2016/12/11/png-explorations.html</link>
+        <guid isPermaLink="true">http://example.com/python/2016/12/11/png-explorations.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>Deploying Django news apps on AWS</title>
@@ -373,12 +518,14 @@ settings and I have a live demo of my app.&lt;/p&gt;
         <title>Finding bears with Pandas</title>
         <description>&lt;p&gt;I wrote some code to get the latest Connecticut bear sightings.&lt;/p&gt;
 
+&lt;p&gt;Here’s &lt;a href=&quot;https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937&quot;&gt;the gist&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;I wanted to try out Pandas’ .read_html() method in order to turn html
 tables into dataframes.&lt;/p&gt;
 
 &lt;p&gt;The code downloads the latest count of reported bear sightings for every town in
 Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp&quot;&gt;this CT Department of Energy and Environmental Protection
-(DEEP) page&lt;/a&gt; and
+DEEP page&lt;/a&gt; and
 turns it into a DataFrame and exports .csv.&lt;/p&gt;
 
 </description>
