@@ -30,13 +30,13 @@ These are the two command line tool examples:
   them to all.json. Usage:
 
   ```
-    python getall.py
+  getall.py
   ```
 
 * getstatus - Get the the status of one airport and print to stdout. Usage:
 
-```
-    python getstatus.py BDL
+{% highlight javascript %}
+    getstatus.py BDL
     {
       "status": {
         "minDelay": "", 
@@ -67,4 +67,4 @@ These are the two command line tool examples:
         "visibility": 10.0
       }
     }
-```
+{% endhighlight %}
