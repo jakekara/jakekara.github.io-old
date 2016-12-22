@@ -5,8 +5,10 @@ date:   2016-12-11 19:50:30 -0400
 categories: python
 ---
 
-Here's some code to fetch airport status from the FAA's airport status
+I wrote some code to fetch airport status from the FAA's airport status
 API.
+
+Here's [the repo](https://github.com/jakekara/faa-airport-status.py).
 
 The [API](http://services.faa.gov/docs/services/airport/#airportStatus) itself is pretty minimal.
 
