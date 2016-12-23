@@ -58,7 +58,7 @@ all.json. Here's the Usage:
   getall.py
   {% endhighlight %}
 
-#### getstatus
+#### getstatus.py
 
 Get the the status of one airport and print to stdout. Here's Usage:
 
