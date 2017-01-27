@@ -6,89 +6,236 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 22 Dec 2016 17:53:50 -0500</pubDate>
-    <lastBuildDate>Thu, 22 Dec 2016 17:53:50 -0500</lastBuildDate>
+    <pubDate>Fri, 27 Jan 2017 16:33:36 -0500</pubDate>
+    <lastBuildDate>Fri, 27 Jan 2017 16:33:36 -0500</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
+        <title>scrapetools.py - for pulling down all linked files from a page</title>
+        <description>&lt;p&gt;I wrote some Python functions to help download every file linked to on a web page.&lt;/p&gt;
+
+&lt;p&gt;Here’s &lt;a href=&quot;https://github.com/jakekara/scrapetools.py&quot;&gt;the repo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s called scrape_tools.py, and it has a modest four methods:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;makedir(directory) - create a directory if it doesn’t exist. usefule for setting up
+your output directory structure programmatically.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;get(url) - wraps requests.get() call and raises an exception when response
+status != 200. Otherwise returns content.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;download_bin(url,output_file) - downloads a file, again using requests,
+and saves it to output_file (which is path string, not file handle).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;def get_files(html, base_url=lambda x: x, match_term=”.csv”, fname=lambda
+x: x) - get all files linked to in html, containing the term match_term,
+which defaults to “.csv”. base_url is a method that takes a url and
+generates a base url, and fname is function takes a url and generates a
+local filename to save the file as on the local machine. Both of these
+methods have default values that do nothing.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;example-seecpy&quot;&gt;example: seec.py&lt;/h4&gt;
+
+&lt;p&gt;The example
+&lt;a href=&quot;https://github.com/jakekara/scrapetools.py/blob/master/seec.py&quot;&gt;seec.py&lt;/a&gt;
+demonstrates how to use the file download all of the CSV files linked to on
+the &lt;a href=&quot;http://seec.ct.gov/eCrisHome/eCRIS_Search/PreviousYears&quot;&gt;Connecticut State Elections Enforcement Commission’s disbursement and
+receipt data
+page&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 27 Jan 2017 04:22:30 -0500</pubDate>
+        <link>http://example.com/python/2017/01/27/scrapetools.html</link>
+        <guid isPermaLink="true">http://example.com/python/2017/01/27/scrapetools.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>API keychain to bypass rate limits</title>
+        <description>&lt;p&gt;I wrote an API keychain to use multiple keys on the same API, getting around daily max-call rate limits.&lt;/p&gt;
+
+&lt;p&gt;Here’s &lt;a href=&quot;https://github.com/jakekara/api-hammer&quot;&gt;the repo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I called it API hammer. It’s a proof-of-concept keychain module for
+handling multiple keys on the same API, potentially bypassing rate
+limits. Keeps track of requests per day, and when the limit is exhausted,
+uses another api key.&lt;/p&gt;
+
+&lt;h4 id=&quot;usage&quot;&gt;usage&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# import the module&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;apihammer&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# create a 'connection'&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# service corresponds to keys.json file &quot;service&quot; field&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apihammer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;noaa&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# get a valid api key (non-exhausted)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# make your API call...&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;your_api_call_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;keysjson&quot;&gt;keys.json&lt;/h4&gt;
+
+&lt;p&gt;By default, apihammer uses a file called keys.json for an api keychain
+file. Each time you call the api_key() method, apihammer updates the
+keychain file. When the calls_per_day is reached for an api key, it is now
+considered exhausted for that day.&lt;/p&gt;
+
+&lt;p&gt;You will want to copy keys.json.example to keys.json like so:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cp keys.json.example keys.json&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;and modify the settings appropriately.&lt;/p&gt;
+
+&lt;p&gt;The structure of keys.json is an array of objects. You must specify a
+“service” property, a “key” (the api key itself) property. uname is not yet
+used, but it is intendend to help you keep track of which email address
+your key is associated with. “calls_per_day” must be set to the max calls
+the API allows per day.&lt;/p&gt;
+
+&lt;p&gt;apihammer will add fields “calls” and “last_call” for its bookkeeping
+purposes.&lt;/p&gt;
+
+&lt;h4 id=&quot;calls-per-second&quot;&gt;calls per second&lt;/h4&gt;
+
+&lt;p&gt;apihammer can throttle the api_key() function if one calls:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_calls_per_second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;All this will do is force the api_key() method to sleep for 1/5 of a second
+before returning. Since your API request method should be dependent upon
+the return value of api_key(), this will cause your code to obey the API’s
+calls-per-second rate limiting.&lt;/p&gt;
+
+&lt;h4 id=&quot;refactor-remnants-proof-of-concept-code&quot;&gt;Refactor remnants, proof of concept code&lt;/h4&gt;
+
+&lt;p&gt;There is some left-over code in apihammer from when I initially thought I
+might also use the module to make the api calls, but I realized that’s not
+the best design. There are some methods that aren’t used. I wanted to get
+the code out fast. Along those lines, I haven’t exhaustively tested this.&lt;/p&gt;
+
+&lt;p&gt;Since this code hasn’t been tested much, please consider it a proof of
+concept.&lt;/p&gt;
+
+&lt;h4 id=&quot;be-nice&quot;&gt;Be nice&lt;/h4&gt;
+
+&lt;p&gt;If some data provider is good enough to provide an API you should generally
+respect the nature of their rate limiting and not try to get around it. But
+sometimes you have to be a jerk.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Jan 2017 04:14:30 -0500</pubDate>
+        <link>http://example.com/python/2017/01/27/api-hammer.html</link>
+        <guid isPermaLink="true">http://example.com/python/2017/01/27/api-hammer.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
         <title>Fetching FAA airport status in python</title>
-        <description>&lt;p&gt;Here’s some code to fetch airport status from the FAA’s airport status
+        <description>&lt;p&gt;I wrote some code to fetch airport status from the FAA’s airport status
 API.&lt;/p&gt;
 
-&lt;p&gt;The API itself is pretty minimal: http://services.faa.gov/docs/services/airport/#airportStatus&lt;/p&gt;
+&lt;p&gt;Here’s &lt;a href=&quot;https://github.com/jakekara/faa-airport-status.py&quot;&gt;the repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://services.faa.gov/docs/services/airport/#airportStatus&quot;&gt;API&lt;/a&gt; itself is pretty minimal.&lt;/p&gt;
 
 &lt;p&gt;You can get XML or JSON, but I’m just interested in JSON.&lt;/p&gt;
 
-&lt;h3 id=&quot;files&quot;&gt;Files&lt;/h3&gt;
+&lt;p&gt;There are two “library” files, airportstatus.py and airports.py, that can
+be used in your code, and two examples of command line scripts that use the
+libraries, getall.py and getstatus.py.&lt;/p&gt;
 
-&lt;p&gt;There are two “library” files that can be used in your code, and two
-command line scripts.&lt;/p&gt;
+&lt;h4 id=&quot;airportstatuspy&quot;&gt;airportstatus.py&lt;/h4&gt;
 
-&lt;p&gt;These are the two libraries:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/faa-airport-status.py/blob/master/airportstatus.py&quot;&gt;This
+file&lt;/a&gt;
+is the main point of interest. It performs API calls with the get_status()
+method. It’s so short, I’ll paste the entire code here:&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;airports.py - Contains a list of (airport code, airport name), and a method
-for performing a simple kkeyword search of airports (the search() method)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;airportstatus.py - Performs API calls with the get_status() method.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;status_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;http://services.faa.gov/airport/status/&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;?format=application/json&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Error fetching status for airport &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+            &lt;span class=&quot;s&quot;&gt;&quot;: &amp;lt;Status: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;airportspy&quot;&gt;airports.py&lt;/h4&gt;
+
+&lt;p&gt;This file creates a list of (airport code, airport name) tuples, and search()
+function that returns the subset of airports whose names or codes include
+the search term.&lt;/p&gt;
 
 &lt;p&gt;These are the two command line tool examples:&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;getall.py - Get status of all airports in the airports.py list and save
-them to all.json. Usage:&lt;/p&gt;
+&lt;h4 id=&quot;getallpy&quot;&gt;getall.py&lt;/h4&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  python getall.py
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;getstatus - Get the the status of one airport and print to stdout. Usage:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Get status of all airports in the airports.py list and save them to
+all.json. Here’s the Usage:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    python getstatus.py BDL
-    {
-      &quot;status&quot;: {
-        &quot;minDelay&quot;: &quot;&quot;, 
-        &quot;maxDelay&quot;: &quot;&quot;, 
-        &quot;trend&quot;: &quot;&quot;, 
-        &quot;reason&quot;: &quot;No known delays for this airport.&quot;, 
-        &quot;closureEnd&quot;: &quot;&quot;, 
-        &quot;avgDelay&quot;: &quot;&quot;, 
-        &quot;closureBegin&quot;: &quot;&quot;, 
-        &quot;endTime&quot;: &quot;&quot;, 
-        &quot;type&quot;: &quot;&quot;
-      }, 
-      &quot;ICAO&quot;: &quot;KBDL&quot;, 
-      &quot;name&quot;: &quot;Bradley International&quot;, 
-      &quot;city&quot;: &quot;Windsor Locks&quot;, 
-      &quot;IATA&quot;: &quot;BDL&quot;, 
-      &quot;delay&quot;: &quot;false&quot;, 
-      &quot;state&quot;: &quot;Connecticut&quot;, 
-      &quot;weather&quot;: {
-        &quot;wind&quot;: &quot;Northwest at 3.5mph&quot;, 
-        &quot;weather&quot;: &quot;Mostly Cloudy&quot;, 
-        &quot;meta&quot;: {
-          &quot;url&quot;: &quot;http://weather.gov/&quot;, 
-          &quot;credit&quot;: &quot;NOAA's National Weather Service&quot;, 
-          &quot;updated&quot;: &quot;4:51 PM Local&quot;
-        }, 
-        &quot;temp&quot;: &quot;40.0 F (4.4 C)&quot;, 
-        &quot;visibility&quot;: 10.0
-      }
-    }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;  &lt;span class=&quot;nx&quot;&gt;getall&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;py&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;getstatuspy&quot;&gt;getstatus.py&lt;/h4&gt;
+
+&lt;p&gt;Get the the status of one airport and print to stdout. Here’s Usage:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;    &lt;span class=&quot;nx&quot;&gt;getstatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;py&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BDL&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;minDelay&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;maxDelay&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;trend&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;reason&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;No known delays for this airport.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;closureEnd&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;avgDelay&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;closureBegin&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;endTime&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;ICAO&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;KBDL&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Bradley International&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;city&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Windsor Locks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;IATA&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;BDL&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;delay&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;state&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Connecticut&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;s2&quot;&gt;&quot;weather&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;wind&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Northwest at 3.5mph&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;weather&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Mostly Cloudy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;meta&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;s2&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;http://weather.gov/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+          &lt;span class=&quot;s2&quot;&gt;&quot;credit&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NOAA's National Weather Service&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+          &lt;span class=&quot;s2&quot;&gt;&quot;updated&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;4:51 PM Local&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;temp&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;40.0 F (4.4 C)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;s2&quot;&gt;&quot;visibility&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 </description>
-        <pubDate>Sun, 11 Dec 2016 18:50:30 -0500</pubDate>
-        <link>http://example.com/python/2016/12/11/airportstatus.html</link>
-        <guid isPermaLink="true">http://example.com/python/2016/12/11/airportstatus.html</guid>
+        <pubDate>Thu, 22 Dec 2016 18:50:30 -0500</pubDate>
+        <link>http://example.com/python/2016/12/22/airportstatus.html</link>
+        <guid isPermaLink="true">http://example.com/python/2016/12/22/airportstatus.html</guid>
         
         
         <category>python</category>
@@ -115,36 +262,34 @@ that wasn’t documented: iDOT. Here’s the out (note that because there are
 so many IDAT chunks in a given file, I just print the number and combined
 size at the end, or else the terminal output would just be way too long.):&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; Valid PNG signature
- ====================
- chunk_length: 13
- chunk_type:  IHDR
- width:  2818
- height:  2328
- bit_depth:  8
- colour_type:  6c
- compression_method:  0
- filter_method:  0
- interlace_method:  0
- ====================
- chunk_length: 2728
- chunk_type:  iCCP
- ====================
- chunk_length: 9
- chunk_type:  pHYs
- ====================
- chunk_length: 415
- chunk_type:  iTXt
- ====================
- chunk_length: 28
- chunk_type:  iDOT
- ====================
- chunk_length: 0
- chunk_type:  IEND
- ====================
- Found a total of 642 IDAT chunks consuming 10512756 bytes.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;     Valid PNG signature
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     chunk_length: 13
+     chunk_type:  IHDR
+     width:  2818
+     height:  2328
+     bit_depth:  8
+     colour_type:  6c
+     compression_method:  0
+     filter_method:  0
+     interlace_method:  0
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     chunk_length: 2728
+     chunk_type:  iCCP
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     chunk_length: 9
+     chunk_type:  pHYs
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     chunk_length: 415
+     chunk_type:  iTXt
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     chunk_length: 28
+     chunk_type:  iDOT
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     chunk_length: 0
+     chunk_type:  IEND
+     &lt;span class=&quot;o&quot;&gt;====================&lt;/span&gt;
+     Found a total of 642 IDAT chunks consuming 10512756 bytes.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Sun, 11 Dec 2016 18:50:30 -0500</pubDate>
         <link>http://example.com/python/2016/12/11/png-explorations.html</link>
