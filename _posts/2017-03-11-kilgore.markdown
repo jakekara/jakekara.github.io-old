@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Command-line CSV processing"
-date:   2017-01-24 4:14:30 -0500
+date:   2017-03-11 10:00:30 -0500
 categories: python
 ---
 
