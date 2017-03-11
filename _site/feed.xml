@@ -6,8 +6,8 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Jan 2017 16:33:36 -0500</pubDate>
-    <lastBuildDate>Fri, 27 Jan 2017 16:33:36 -0500</lastBuildDate>
+    <pubDate>Fri, 10 Mar 2017 15:23:50 -0500</pubDate>
+    <lastBuildDate>Fri, 10 Mar 2017 15:23:50 -0500</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -135,9 +135,9 @@ concept.&lt;/p&gt;
 respect the nature of their rate limiting and not try to get around it. But
 sometimes you have to be a jerk.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 27 Jan 2017 04:14:30 -0500</pubDate>
-        <link>http://example.com/python/2017/01/27/api-hammer.html</link>
-        <guid isPermaLink="true">http://example.com/python/2017/01/27/api-hammer.html</guid>
+        <pubDate>Tue, 24 Jan 2017 04:14:30 -0500</pubDate>
+        <link>http://example.com/python/2017/01/24/api-hammer.html</link>
+        <guid isPermaLink="true">http://example.com/python/2017/01/24/api-hammer.html</guid>
         
         
         <category>python</category>
