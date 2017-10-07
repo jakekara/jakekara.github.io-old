@@ -1,0 +1,55 @@
+@import url("fonts.css");
+
+html {
+    font-family: "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    background-color: #fffff8;
+    color: #0a2c0f;
+    color: #122b17;
+
+}
+body {
+    line-height: 1.4;
+}
+
+h1, h2{
+    font-size: 2.3em;
+    font-weight: 400;
+}
+
+h3,h4,h5,h6,h7{
+    font-style: italic;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color: gray;
+}
+
+.post-meta {
+    color: gray;
+    text-align: right;
+}
+
+.container{
+
+    margin-top: 60pt;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    max-width: 600pt;
+    
+}
+
+p{
+    font-size: 1.4em;
+}
+
+
+code {
+    font-family: Monaco, "Lucida console", 'Inconsolata', monospace;
+}
+
