@@ -6,9 +6,208 @@
 </description>
     <link>http://example.com/</link>
     <atom:link href="http://example.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Mar 2017 15:23:50 -0500</pubDate>
-    <lastBuildDate>Fri, 10 Mar 2017 15:23:50 -0500</lastBuildDate>
+    <pubDate>Sat, 07 Oct 2017 17:02:26 -0400</pubDate>
+    <lastBuildDate>Sat, 07 Oct 2017 17:02:26 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Split big topojson files into a grid of files</title>
+        <description>&lt;p&gt;I made a script to split a giant topojson file into a ton of smaller ones.&lt;/p&gt;
+
+&lt;p&gt;Here’s the code: &lt;a href=&quot;https://github.com/jakekara/toposplit&quot;&gt;https://github.com/jakekara/toposplit&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;why&quot;&gt;Why?&lt;/h4&gt;
+
+&lt;p&gt;I needed to make a block-level map of the entire state of
+Connecticut. Here’s &lt;a href=&quot;https://jakekara.github.io/block-zoom-ct/&quot;&gt;a demo of the final
+product&lt;/a&gt;. Click a town to zoom
+in. It loads only the topojson file for the grid it needs, on the fly,
+rather than loading the entire state’s worth of blocks at once.&lt;/p&gt;
+
+&lt;h4 id=&quot;mapshaper-comes-close-but&quot;&gt;mapshaper comes close but…&lt;/h4&gt;
+
+&lt;p&gt;Census blocks are tiny – there are 65,000+ in Connecticut, and Connecticut
+is a tiny state. That means a topojson file, even simplified, of all the
+Census blocks in the state is 30+ MB. Waaay too big.&lt;/p&gt;
+
+&lt;p&gt;So I decided to split the state into a grid, make little topojson files for
+each grid, and load them on the fly.&lt;/p&gt;
+
+&lt;p&gt;Mapshaper has the ability to split a topojson file into layers based on a
+grid, but I needed to split those layers out into separate files so I wrote
+toposplit.&lt;/p&gt;
+
+&lt;p&gt;There’s some documentation in the repo, but I suggest running the demo
+script and seeing how that works to see how I actually used
+it. Instructions for running the demo are in the EXAMPLE section of the
+README.&lt;/p&gt;
+
+&lt;p&gt;The demo downloads a giant shapefile, splits it up into little ones…&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 16 Apr 2017 11:00:30 -0400</pubDate>
+        <link>http://example.com/javascript/2017/04/16/toposplit.html</link>
+        <guid isPermaLink="true">http://example.com/javascript/2017/04/16/toposplit.html</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>datab.js, tabular data with js</title>
+        <description>&lt;p&gt;I wrote a js library for transforming tabular data in javascript, and
+generating editable HTML tables.&lt;/p&gt;
+
+&lt;p&gt;(install with npm install datab)&lt;/p&gt;
+
+&lt;p&gt;Some cool features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You can bind a file input element to create a datab.data object and call
+a callback function when a user chooses a .csv&lt;/li&gt;
+  &lt;li&gt;You can generate a save-able CSV file blob for the user to download at
+any point&lt;/li&gt;
+  &lt;li&gt;In addition to generating CSV files, you can also generate editable HTML tables, JSON
+ objects and JS objects that represent your datab.data object&lt;/li&gt;
+  &lt;li&gt;When you generate an HTML table, and you make some alterations using
+datab’s built-in edit modes (transpose/add/drop cols), the internal data of
+the object can also be synched to incorporate those changes.&lt;/li&gt;
+  &lt;li&gt;You can create a datab.js from JSON, a JS object, a CSV file or a CSV
+string You can transpose a table and add and drop columns&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Features I want to add:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DOC-U-MEN-TATION, with lots of cool demos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here’s the repo:
+&lt;a href=&quot;https://github.com/jakekara/datab.js&quot;&gt;https://github.com/jakekara/datab.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s a modest demo
+&lt;a href=&quot;https://jakekara.github.io/datab.js/demo/&quot;&gt;https://jakekara.github.io/datab.js/demo/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s specifically not styled at all to show you that datab.js doesn’t
+care. I don’t want it to be opinionated at all or rely on CSS, or conflict
+with your CSS.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-more-interesting-demo-building-a-map&quot;&gt;A more interesting demo: Building a map&lt;/h4&gt;
+
+&lt;p&gt;Here’s a demo of a map-making tool, using datab.js:
+&lt;a href=&quot;https://jakekara.github.io/ct-color-map/&quot;&gt;https://jakekara.github.io/ct-color-map/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the kind of thing I do all the time working in a newsroom. You
+supply it a CSV with a column for town names a column of colors (RGB/A HEX
+or named web colors) and it will color the map. Here’s &lt;a href=&quot;https://github.com/jakekara/ct-color-map/blob/master/sample_data.csv&quot;&gt;a sample
+CSV&lt;/a&gt;
+you can “upload” to it (it doesn’t ever leave your local machine.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-im-using-it&quot;&gt;How I’m using it&lt;/h4&gt;
+
+&lt;p&gt;I’m working on a project that deals with a lot of tabular data – ingesting
+it into a database and displaying it in a web app. datab has been my swiss
+army knife for this project.&lt;/p&gt;
+
+&lt;h4 id=&quot;how-i-plan-to-use-it-or-how-you-might-want-to-use-it&quot;&gt;How I plan to use it, or how you might want to use it&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I’d love to write a node CLI tool for manipulating tabular data, or
+generating web graphics from spreadsheets&lt;/li&gt;
+  &lt;li&gt;I have a table-maker demo, complete with a download button that generates
+a fully self-contained, single-file HTML chart that you can iframe or
+pym.js-embed into your pages. Hoping to upload that soon.&lt;/li&gt;
+  &lt;li&gt;Anywhere I need tables from data, I’m going to start using this.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;design-approach&quot;&gt;Design approach&lt;/h4&gt;
+
+&lt;p&gt;I write code using Javascripts prototype OOP model, so that’s how this code
+is structured. I don’t use a common approach of packing the entire library
+into a single variable.&lt;/p&gt;
+
+&lt;p&gt;I write JS, front-end or back-end, in node modules with require for
+dependencies, rathern than using script tags. For front-end stuff, I use
+browserify and uglifyjs to bundle everything together and then just include
+that one script.&lt;/p&gt;
+
+&lt;p&gt;There are two modules so far – datab.data and datab.ui.&lt;/p&gt;
+
+&lt;p&gt;The .data module is the core functionality of constructing and manipulating
+the tabular data object, and exporting it in different formats. This part
+is suitable for use in node or in a browser.&lt;/p&gt;
+
+&lt;p&gt;The .ui module is meant to encapsulate the stuff that has to do with
+drawing the tabular data set to HTML (and reading data from HTML
+tables). This is only useful in a browser.&lt;/p&gt;
+
+&lt;p&gt;I did not reinvent stuff that D3 can handle, like transposing
+matrices. However, I haven’t looked at how Bostock implements that and I
+might re-implement it myself at some pointi. Since I already store the
+matrix internally in two formats – as an array of rows and as an array of
+columns, I can transpose a table in constant time (but double the memory
+usage)  by just swapping the internal __cols and __rows attributes.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 16 Apr 2017 11:00:30 -0400</pubDate>
+        <link>http://example.com/javascript/2017/04/16/datab.js.html</link>
+        <guid isPermaLink="true">http://example.com/javascript/2017/04/16/datab.js.html</guid>
+        
+        
+        <category>javascript</category>
+        
+      </item>
+    
+      <item>
+        <title>Command-line CSV processing with Kilgore Trout</title>
+        <description>&lt;p&gt;Some csv cleanup scripts grew into a little utility named kilgore.&lt;/p&gt;
+
+&lt;p&gt;It’s basically a wrapper for some pandas functions. I probably should have just
+done this with Jupyter notebook, but I’ve been doing so much shell scripting for
+the Unix class I’m taking this semester, it just seemed quicker and more
+universal. Or maybe it was just more fun.&lt;/p&gt;
+
+&lt;p&gt;Here’s the repo:
+&lt;a href=&quot;https://github.com/jakekara/kilgoretrout&quot;&gt;https://github.com/jakekara/kilgoretrout&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;cleanup-module-registry&quot;&gt;Cleanup module registry&lt;/h4&gt;
+
+&lt;p&gt;kilgore lets you drop columns or select specific ones, prettify column headers
+(all lowercase, alpha-numeric and underscores), and limit the output to a number
+of rows. I also added a registry module where you can write scripts specific to
+your cleanup tasks, register them, and then call them with the “–load”
+argument.&lt;/p&gt;
+
+&lt;h4 id=&quot;other-features&quot;&gt;Other features&lt;/h4&gt;
+
+&lt;p&gt;kilgore can also output JSON with the –json – an array of rows, each represented by a
+dictionary of column name and cell value pairs.&lt;/p&gt;
+
+&lt;p&gt;Finally, kilgore can be forced to load the data as strings, overriding pandas’
+column type inference.&lt;/p&gt;
+
+&lt;h4 id=&quot;example-scripts&quot;&gt;Example scripts&lt;/h4&gt;
+
+&lt;p&gt;The demo folder in the repo contains raw data, clean data, and scripts to get
+from raw to clean.&lt;/p&gt;
+
+&lt;p&gt;Here’s a slightly modified snippet from absenteeism.sh, for cleaning up CT
+schools asentee rate data.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;kilgore --skiprows 4 -i &lt;span class=&quot;nv&quot;&gt;$FILENAME&lt;/span&gt; --pretty&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+           --load clean_code_columns &amp;gt; clean/csv/&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;basename &lt;span class=&quot;nv&quot;&gt;$FILENAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;.csv
+	   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sat, 11 Mar 2017 10:00:30 -0500</pubDate>
+        <link>http://example.com/python/2017/03/11/kilgore.html</link>
+        <guid isPermaLink="true">http://example.com/python/2017/03/11/kilgore.html</guid>
+        
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>scrapetools.py - for pulling down all linked files from a page</title>
@@ -539,147 +738,6 @@ service, just turn off Ghostery. That’s it.&lt;/p&gt;
         
         
         <category>AWS</category>
-        
-      </item>
-    
-      <item>
-        <title>Brute forcing URL shorteners</title>
-        <description>&lt;p&gt;I experimented in brute-forcing URL shortening services.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty&quot;&gt;Here’s&lt;/a&gt; the repo (Python).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/jakekara/python-get-shorty/blob/master/sample_output/two-chars.tsv&quot;&gt;Here’s a
-.tsv&lt;/a&gt;
-of all the two-character bit.ly links and the URLs they forward to.&lt;/p&gt;
-
-&lt;p&gt;It works like this:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Generate the valid URLs&lt;/li&gt;
-  &lt;li&gt;Send an HTTP request with the request library&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;There have been a decent number of
-&lt;a href=&quot;https://www.schneier.com/blog/archives/2016/04/security_risks_11.html&quot;&gt;stories&lt;/a&gt;
-lately about the security risks posed by URL shorteners because they can be trivially brute forced. A lot of shortened links are probably meant to be public, such as URLs shortened for sharing on social media, but I guess some services, like OneDrive, use short URLs for documents.&lt;/p&gt;
-
-&lt;h3 id=&quot;disabling-rediects&quot;&gt;disabling rediects&lt;/h3&gt;
-
-&lt;p&gt;Since I only wanted to find the full URLs that were being redirected to,
-and not actually download their content, I set the requets allow_redirects
-option to False.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;allow_redirects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-</description>
-        <pubDate>Sat, 08 Oct 2016 22:57:30 -0400</pubDate>
-        <link>http://example.com/python/2016/10/08/brute-forcing-url-shorteners.html</link>
-        <guid isPermaLink="true">http://example.com/python/2016/10/08/brute-forcing-url-shorteners.html</guid>
-        
-        
-        <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>Visualizing foliage</title>
-        <description>&lt;p&gt;I made a thing to compare foliage in two locations over four years.&lt;/p&gt;
-
-&lt;p&gt;You can see &lt;a href=&quot;https://jakekara.github.io/foliage-viz/&quot;&gt;the demo here&lt;/a&gt; and on
-&lt;a href=&quot;http://projects.ctmirror.org/content/trend/2016/10/foliage/&quot;&gt;TrendCT.org here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The code is &lt;a href=&quot;https://github.com/jakekara/foliage-viz&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It uses d3. It works like this:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Load in a spreadsheet containing a color for each
-day, which my colleague Andrew Ba Tran &lt;a href=&quot;https://github.com/trendct-data/ct-leaf-colors-analysis&quot;&gt;generated using R&lt;/a&gt;.
-The color is meant to be a representative of the foliage color for that day, or
-at least the most-dominant color.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Generate a bar for each year, filled with individual div elements that each
-represent a day, and are colored according to the file in step 1.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Add a slider to allow you to slide through the days of the year. On each day,
-it shows all four pictures side by side, and theoretically gives you some sense
-of how brilliant the foliage has historically been on a given day. At least
-that’s sort of the over-intellectualized justification for it. It’s really just
-fun and I don’t walk away from a coding challenge.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;momentjs&quot;&gt;moment.js&lt;/h3&gt;
-
-&lt;p&gt;I used &lt;a href=&quot;http://momentjs.com/&quot;&gt;moment.js&lt;/a&gt; to do a few things. It seems to be a
-really nice library.&lt;/p&gt;
-
-&lt;p&gt;I used it to map each value from 1 to 366 (leap years) on the slider to an
-actual date, like this:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;day&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2016 &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;YYYY DDD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2016 &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;YYYY DDD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MM&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;FOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load_date&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loc_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;month&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// , 2020);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;When the app is bootstrapping, moment.js to get the current date and use it to
-load the thumbnails for the current day (of the past years).&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;FOL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;load_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loc_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;nx&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MM&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-	&lt;span class=&quot;nx&quot;&gt;moment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;DD&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-	&lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;jekyll&quot;&gt;jekyll&lt;/h3&gt;
-
-&lt;p&gt;This was the first project I used jekyll for, and it was a perfect application.&lt;/p&gt;
-
-&lt;p&gt;I didn’t just design the interactives; but the whole page layout, since our site
-&lt;a href=&quot;//trendct.org&quot;&gt;trendct.org&lt;/a&gt;, doesn’t have a full-width template for projects
-like this that have a lot of components.&lt;/p&gt;
-
-&lt;p&gt;A great freebie is that all I have to do is enable the project page in the repo
-settings and I have a live demo of my app.&lt;/p&gt;
-
-&lt;p&gt;I got so hooked on Jekyll that I built this blog with it.&lt;/p&gt;
-
-&lt;h3 id=&quot;failures&quot;&gt;Failures&lt;/h3&gt;
-
-&lt;p&gt;Visually, the interactive could be better; I’ll admit that. Deadlines.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 03 Oct 2016 19:57:30 -0400</pubDate>
-        <link>http://example.com/javascript/2016/10/03/foliage-tracker.html</link>
-        <guid isPermaLink="true">http://example.com/javascript/2016/10/03/foliage-tracker.html</guid>
-        
-        
-        <category>javascript</category>
-        
-      </item>
-    
-      <item>
-        <title>Finding bears with Pandas</title>
-        <description>&lt;p&gt;I wrote some code to get the latest Connecticut bear sightings.&lt;/p&gt;
-
-&lt;p&gt;Here’s &lt;a href=&quot;https://gist.github.com/jakekara/970e6547a9d2a657885862732cda3937&quot;&gt;the gist&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I wanted to try out Pandas’ .read_html() method in order to turn html
-tables into dataframes.&lt;/p&gt;
-
-&lt;p&gt;The code downloads the latest count of reported bear sightings for every town in
-Connecticut from &lt;a href=&quot;http://www.depdata.ct.gov/wildlife/sighting/bearsight.asp&quot;&gt;this CT Department of Energy and Environmental Protection
-DEEP page&lt;/a&gt; and
-turns it into a DataFrame and exports .csv.&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 01 Oct 2016 19:57:30 -0400</pubDate>
-        <link>http://example.com/python/2016/10/01/omg-bears.html</link>
-        <guid isPermaLink="true">http://example.com/python/2016/10/01/omg-bears.html</guid>
-        
-        
-        <category>python</category>
         
       </item>
     
